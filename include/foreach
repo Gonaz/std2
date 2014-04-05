@@ -1,0 +1,28 @@
+//
+//  foreach
+//  std2
+//
+//  Created by Jonas Vanthornhout on 31/12/13.
+//  Copyright (c) 2013 Jonas Vanthornhout. All rights reserved.
+//
+
+#ifndef std2_foreach
+#define std2_foreach
+
+#define foreach(c, k, v, f) \
+    std2::impl::foreach_(c, \
+        [&](const typename std::remove_reference<decltype(c)>::type::key_type &k, \
+                  typename std::remove_reference<decltype(c)>::type::mapped_type v) f)
+
+namespace std2{
+    namespace impl {
+        template <typename T, typename F>
+        void foreach_(T &c, F f){
+            for(auto &kv : c){
+                f(kv.first, kv.second);
+            }
+        }
+    }
+}
+
+#endif

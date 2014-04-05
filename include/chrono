@@ -1,16 +1,13 @@
 //
-//  chrono.h
+//  chrono
 //  std2
 //
 //  Created by Jonas Vanthornhout on 22/12/13.
 //  Copyright (c) 2013 Jonas Vanthornhout. All rights reserved.
 //
 
-#ifndef std2_chrono_h
-#define std2_chrono_h
-
-/* The classes below are exported */
-#pragma GCC visibility push(default)
+#ifndef std2_chrono
+#define std2_chrono
 
 #include <chrono>
 
@@ -29,7 +26,5 @@ namespace std2 {
         }
     }
 }
-
-#pragma GCC visibility pop
 
 #endif

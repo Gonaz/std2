@@ -1,0 +1,24 @@
+//
+//  exception
+//  std2
+//
+//  Created by Jonas Vanthornhout on 05/04/14.
+//  Copyright (c) 2014 Jonas Vanthornhout. All rights reserved.
+//
+
+#ifndef std2_exception
+#define std2_exception
+
+#include <string>
+#include <sstream>
+
+#define throwException(arg) {std::stringstream location; location << __FILE__ << "::" <<  __func__ << "(" << __LINE__ << ")"; throw std2::exception{location.str(), arg};}
+
+namespace std2 {
+    struct exception{
+        const std::string origin;
+        const std::string msg;
+    };
+}
+
+#endif
